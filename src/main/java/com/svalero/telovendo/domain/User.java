@@ -13,7 +13,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity(name = "client")
-public class Client {
+public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -43,7 +43,7 @@ public class Client {
     @Column
     private boolean vip;
 
-    @OneToMany(mappedBy = "client")
-    @JsonBackReference(value = "client-product")
+    @OneToMany(mappedBy = "user")
+    @JsonBackReference(value = "user-product")
     private List<Product> products;
 }
