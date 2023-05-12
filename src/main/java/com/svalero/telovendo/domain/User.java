@@ -29,19 +29,15 @@ public class User {
 
     @Column
     @NotBlank
-    private String username;
+    private String user;
 
     @Column
     @NotBlank
-    private int age;
-    @Column
-    @NotBlank
-    private String dni;
+    private String email;
 
     @Column
-    private LocalDate registerDate;
-    @Column
-    private boolean vip;
+    @NotBlank
+    private String password;
 
     @OneToMany(mappedBy = "user")
     @JsonBackReference(value = "user-product")

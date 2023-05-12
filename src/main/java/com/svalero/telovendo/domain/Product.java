@@ -23,7 +23,7 @@ public class Product {
 
     @Column
     @NotBlank
-    private String name;
+    private String product_name;
 
     @Column
     @NotBlank
@@ -45,6 +45,6 @@ public class Product {
     private float longitude;
     @ManyToOne
     @OnDelete(action = OnDeleteAction.CASCADE)
-    @JoinColumn(name = "user_id")
+    @JoinColumn(name = "user_id", referencedColumnName = "id")
     private User user;
 }
