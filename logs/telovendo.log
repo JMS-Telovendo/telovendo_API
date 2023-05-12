@@ -361,3 +361,14 @@ Caused by: org.hibernate.HibernateException: Access to DialectResolutionInfo can
 2023-05-12 11:47:10,980 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
 2023-05-12 11:47:11,578 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-991"]
 2023-05-12 11:47:11,603 INFO org.springframework.boot.StartupInfoLogger [main] Started TelovendoApplication in 3.739 seconds (JVM running for 4.145)
+2023-05-12 13:49:56,999 INFO org.springframework.boot.StartupInfoLogger [main] Starting TelovendoApplication using Java 17.0.5 on DESKTOP-NEVGVO4 with PID 17756 (C:\Users\Joserra\Desktop\MisCursos\DAM\Curso2023\telovendo\telovendo\target\classes started by Joserra in C:\Users\Joserra\Desktop\MisCursos\DAM\Curso2023\telovendo\telovendo)
+2023-05-12 13:49:57,006 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2023-05-12 13:49:59,050 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-991"]
+2023-05-12 13:49:59,051 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2023-05-12 13:49:59,051 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.70]
+2023-05-12 13:49:59,161 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2023-05-12 13:49:59,641 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2023-05-12 13:49:59,800 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2023-05-12 13:50:00,734 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-05-12 13:50:01,338 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-991"]
+2023-05-12 13:50:01,370 INFO org.springframework.boot.StartupInfoLogger [main] Started TelovendoApplication in 4.735 seconds (JVM running for 5.161)
