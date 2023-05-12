@@ -12,7 +12,7 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity(name = "client")
+@Entity(name = "users")
 public class User {
 
     @Id

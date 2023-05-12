@@ -14,7 +14,7 @@ import java.time.LocalDate;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity(name = "product")
+@Entity(name = "products")
 public class Product {
 
     @Id
