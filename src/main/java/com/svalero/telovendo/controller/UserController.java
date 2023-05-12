@@ -21,4 +21,43 @@ public class UserController {
         users = userService.findAllUsers();
         return users;
     }
+
+    // Busca un usuario por ID
+    @GetMapping("/user/{id}")
+    public User getUser(@PathVariable long id) {
+
+        User user = userService.findUser(id);
+
+
+        return user;
+    }
+
+    // Borra un usuario por id
+    @DeleteMapping("/user/{id}")
+    public User deleteUser(@PathVariable long id) {
+
+        User user = userService.deleteUser(id);
+
+
+        return user;
+    }
+
+    // Registra un nuevo usuario
+    @PostMapping("/user")
+    public User addUser(@RequestBody User user) {
+
+        User newUser = userService.addUser(user);
+
+
+        return newUser;
+    }
+
+    // Modifica un usuario por id
+    @PutMapping("/user/{id}")
+    public User modifyUser(@RequestBody User user, @PathVariable long id) {
+
+        User newUser = userService.modifyUser(user, id);
+
+        return newUser;
+    }
 }

@@ -23,7 +23,7 @@ public class Product {
 
     @Column
     @NotBlank
-    private String name;
+    private String product_name;
 
     @Column
     @NotBlank
