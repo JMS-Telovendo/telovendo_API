@@ -28,41 +28,53 @@ public class ProductController {
     // Lista todos los productos
     @GetMapping("/products")
     public List<Product> getProducts() {
+        logger.info("Prepare a list for all products");
         List<Product> product;
+
+        logger.info("Find all products");
         product = productService.findAllProducts();
+
+        logger.info("End find all products");
         return product;
     }
 
     // Busca un producto por ID
     @GetMapping("/product/{id}")
     public Product getProduct(@PathVariable long id) {
+        logger.info("Find product by ID: " + id);
         Product product = productService.findProduct(id);
 
+        logger.info("End find product by ID: " +id);
         return product;
     }
 
     // Borra un producto por id
     @DeleteMapping("/product/{id}")
     public Product deleteProduct(@PathVariable long id) {
-
+        logger.info("Delete product with ID: " + id);
         Product product = productService.deleteProduct(id);
 
+        logger.info("End delete product with ID: " + id);
         return product;
     }
 
     // Registra un nuevo producto
     @PostMapping("/product")
     public Product addProduct(@RequestBody Product product) {
+        logger.info("Register a new product", product);
         Product newProduct = productService.addProduct(product);
 
+        logger.info("End register a new product", product);
         return newProduct;
     }
 
     // Modifica un producto por id
     @PutMapping("/product/{id}")
     public Product modifyProduct(@RequestBody Product product, @PathVariable long id) {
+        logger.info("Modify a product with ID: " + id, product);
         Product newProduct = productService.modifyProduct(product, id);
 
+        logger.info("End modify a product with ID: " + id, product, newProduct);
         return newProduct;
     }
 
