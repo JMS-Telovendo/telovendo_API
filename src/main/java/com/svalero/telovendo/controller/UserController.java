@@ -25,6 +25,7 @@ public class UserController {
     private UserService userService;
 
     // Lista todos los usuarios
+    @GetMapping("/users")
     public List<User> getUsers() {
         logger.info("Prepare a list for all users");
         List<User> users;
