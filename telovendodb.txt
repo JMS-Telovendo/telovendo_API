@@ -1,0 +1,12 @@
+CREATE DATABASE telovendo
+
+INSERT INTO `users` (`id`, `email`, `name`, `password`, `surname`, `user`) VALUES
+(1, 'joserra2304@developer.org', 'Joserra', NULL, 'Gimeno', 'JoserraAPI'),
+(2, 'sandrafantoni@androiddesigner.retrofit', 'Sandra', NULL, 'Fantoni', 'SandraRetrofit'),
+(3, 'martahusillos@imade.es', 'Marta', NULL, 'Husillos', 'Marta_Imasde');
+
+INSERT INTO `products` (`id`, `available`, `category`, `latitude`, `longitude`, `price`, `product_name`, `selling_date`, `user_id`) VALUES
+(1, b'1', 'Programa', 0, 0, 9.99, 'Android Studio 3.0', '2023-05-11', 2),
+(2, b'1', 'Deportes', 0, 0, 19.99, 'Guantes Boxeo', '2023-05-09', 3),
+(3, b'1', 'Instrumentos musicales', 0, 0, 999.99, 'Guitarra', '2023-05-02', 1),
+(4, b'0', 'Videojuego', 0, 0, 59.99, 'Zelda TOTK', '2023-05-12', NULL);
