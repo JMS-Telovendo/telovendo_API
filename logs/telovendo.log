@@ -3016,3 +3016,52 @@ Identify and stop the process that's listening on port 991 or configure this app
 2023-05-13 09:51:39,903 INFO com.svalero.telovendo.controller.UserController [http-nio-991-exec-1] Prepare a list for all users
 2023-05-13 09:51:39,904 INFO com.svalero.telovendo.controller.UserController [http-nio-991-exec-1] Find all users
 2023-05-13 09:51:40,029 INFO com.svalero.telovendo.controller.UserController [http-nio-991-exec-1] End find all users
+2023-05-13 09:55:44,684 INFO org.springframework.boot.StartupInfoLogger [main] Starting TelovendoApplication using Java 17.0.5 on DESKTOP-NEVGVO4 with PID 14060 (C:\Users\Joserra\Desktop\MisCursos\DAM\Curso2023\telovendo\telovendo\target\classes started by Joserra in C:\Users\Joserra\Desktop\MisCursos\DAM\Curso2023\telovendo\telovendo)
+2023-05-13 09:55:44,689 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2023-05-13 09:55:45,833 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-991"]
+2023-05-13 09:55:45,833 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2023-05-13 09:55:45,834 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.70]
+2023-05-13 09:55:45,925 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2023-05-13 09:55:46,370 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2023-05-13 09:55:46,511 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2023-05-13 09:55:47,423 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-05-13 09:55:47,986 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-991"]
+2023-05-13 09:55:47,993 WARN org.springframework.context.support.AbstractApplicationContext [main] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'; nested exception is org.springframework.boot.web.server.PortInUseException: Port 991 is already in use
+2023-05-13 09:55:47,996 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Shutdown initiated...
+2023-05-13 09:55:48,006 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Shutdown completed.
+2023-05-13 09:55:48,007 INFO org.apache.juli.logging.DirectJDKLog [main] Pausing ProtocolHandler ["http-nio-991"]
+2023-05-13 09:55:48,007 INFO org.apache.juli.logging.DirectJDKLog [main] Stopping service [Tomcat]
+2023-05-13 09:55:48,009 INFO org.apache.juli.logging.DirectJDKLog [main] Stopping ProtocolHandler ["http-nio-991"]
+2023-05-13 09:55:48,010 INFO org.apache.juli.logging.DirectJDKLog [main] Destroying ProtocolHandler ["http-nio-991"]
+2023-05-13 09:55:48,027 ERROR org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter [main] 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 991 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 991 or configure this application to listen on another port.
+
+2023-05-13 09:56:02,372 INFO org.springframework.boot.StartupInfoLogger [main] Starting TelovendoApplication using Java 17.0.5 on DESKTOP-NEVGVO4 with PID 16836 (C:\Users\Joserra\Desktop\MisCursos\DAM\Curso2023\telovendo\telovendo\target\classes started by Joserra in C:\Users\Joserra\Desktop\MisCursos\DAM\Curso2023\telovendo\telovendo)
+2023-05-13 09:56:02,377 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2023-05-13 09:56:03,581 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-991"]
+2023-05-13 09:56:03,582 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2023-05-13 09:56:03,583 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.70]
+2023-05-13 09:56:03,668 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2023-05-13 09:56:04,080 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2023-05-13 09:56:04,213 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2023-05-13 09:56:05,041 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-05-13 09:56:05,595 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-991"]
+2023-05-13 09:56:05,621 INFO org.springframework.boot.StartupInfoLogger [main] Started TelovendoApplication in 3.578 seconds (JVM running for 3.99)
+2023-05-13 09:56:12,225 INFO org.apache.juli.logging.DirectJDKLog [http-nio-991-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-05-13 09:56:12,246 INFO com.svalero.telovendo.controller.UserController [http-nio-991-exec-1] Prepare a list for all users
+2023-05-13 09:56:12,246 INFO com.svalero.telovendo.controller.UserController [http-nio-991-exec-1] Find all users
+2023-05-13 09:56:12,362 INFO com.svalero.telovendo.controller.UserController [http-nio-991-exec-1] End find all users
+2023-05-13 09:56:21,081 INFO com.svalero.telovendo.controller.ProductController [http-nio-991-exec-9] Prepare a list for all products
+2023-05-13 09:56:21,082 INFO com.svalero.telovendo.controller.ProductController [http-nio-991-exec-9] Find all products
+2023-05-13 09:56:21,085 INFO com.svalero.telovendo.controller.ProductController [http-nio-991-exec-9] End find all products

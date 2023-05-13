@@ -1,0 +1,322 @@
+openapi: 3.0.2
+servers:
+  - url: /telovendo-api
+info:
+  description: API para la venta de productos de Telovento
+  version: "1.0"
+  title: Telovendo API
+tags:
+  - name: product
+    description: Operaciones para realizar con productos
+  - name: user
+    description: Gestión de usuarios
+paths:
+  /products:
+    get:
+      tags:
+        - product
+      summary: Listado de productos
+      description: Obtiene la información de todos los productos que hay actualmente en el catálogo
+      operationId: getProducts
+      responses:
+        '200':
+          description: Se devuelve el listado de productos correctamente
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Product'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+    post:
+      tags:
+        - product
+      summary: Registro de un nuevo producto
+      description: Registra un nuevo producto en el catálogo de la tienda
+      operationId: postProduct
+      requestBody:
+        $ref: '#/components/requestBodies/ProductIn'
+      responses:
+        '201':
+          description: El producto se registra correctamente
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Product'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+  /product/{productId}:
+    parameters:
+      - $ref: '#/components/parameters/ProductId'
+    delete:
+      tags:
+        - product
+      summary: Elimina un producto
+      description: Elimina un producto del catálogo a partir del productId
+      operationId: deleteProduct
+      responses:
+        '204':
+          $ref: '#/components/responses/NoContent'
+        '404':
+          $ref: '#/components/responses/ProductNotFound'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+    put:
+      tags:
+        - product
+      summary: Modifica un producto
+      description: Modifica toda la información de un producto
+      operationId: putProduct
+      requestBody:
+        $ref: '#/components/requestBodies/ProductIn'
+      responses:
+        '200':
+          description: El producto se ha modificado correctamente
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Product'
+        '404':
+          $ref: '#/components/responses/ProductNotFound'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+  /users:
+    get:
+      tags:
+        - user
+      summary: Listado de usuarios
+      description: Obtiene la información de todos los usuarios
+      operationId: getUsers
+      responses:
+        '200':
+          description: Se devuelve el listado de usuarios correctamente
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/User'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+    post:
+      tags:
+        - user
+      summary: Registro de un nuevo usuario
+      description: Registra un nuevo usuario
+      operationId: postUser
+      requestBody:
+        $ref: '#/components/requestBodies/UserIn'
+      responses:
+        '201':
+          description: El producto se registra correctamente
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+  /user/{userId}:
+    parameters:
+      - $ref: '#/components/parameters/UserId'
+    delete:
+      tags:
+        - user
+      summary: Elimina un usuario
+      description: Elimina un usuario del listado a partir del userId
+      operationId: deleteUser
+      responses:
+        '204':
+          $ref: '#/components/responses/NoContent'
+        '404':
+          $ref: '#/components/responses/UserNotFound'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+    put:
+      tags:
+        - user
+      summary: Modifica un usuario
+      description: Modifica toda la información de un usuario
+      operationId: putUser
+      requestBody:
+        $ref: '#/components/requestBodies/UserIn'
+      responses:
+        '200':
+          description: El usuario se ha modificado correctamente
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+        '404':
+          $ref: '#/components/responses/UserNotFound'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+components:
+  schemas:
+    Product:
+      type: object
+      properties:
+        product_name:
+          type: string
+          example: "D&D Tumba de la aniquilación"
+          description: Nombre del producto
+        category:
+          type: string
+          example: "Libros"
+          description: Categoria a la que pertenece
+        price:
+          type: number
+          format: float
+          example: 39.99
+        available:
+          type: boolean
+          example: false
+
+    ProductIn:
+      type: object
+      properties:
+        product_name:
+          type: string
+          example: "D&D Maldición de Strahd"
+          description: Nombre del producto
+        category:
+          type: string
+          example: "Libros"
+          description: Categoria a la que pertenece
+        price:
+          type: number
+          format: float
+          example: 12.45
+        available:
+          type: boolean
+          example: true
+
+    User:
+      type: object
+      properties:
+        name:
+          type: string
+          example: "Mery"
+          description: Nombre del usuario
+        surname:
+          type: string
+          example: "Gomez"
+          description: Apellido del usuario
+        user:
+          type: string
+          example: "M3G0"
+          description: Mote del usuario
+        email:
+          type: string
+          example: "merygomez99@outlook.es"
+          description: Correo electronico del usuario
+        password:
+          type: string
+          example: "Mery_99c"
+          description: Contraseña del usuario
+
+    UserIn:
+      type: object
+      properties:
+        name:
+          type: string
+          example: "Cristina"
+          description: Nombre del usuario
+        surname:
+          type: string
+          example: "Life"
+          description: Apellido del usuario
+        user:
+          type: string
+          example: "Cris:)"
+          description: Mote del usuario
+        email:
+          type: string
+          example: "crist56@life.com"
+          description: Correo electronico del usuario
+        password:
+          type: string
+          example: "Cr1s_89m"
+          description: Contraseña del usuario
+
+    ErrorResponse:
+      properties:
+        errorCode:
+          type: number
+          format: int32
+          example: 104
+        message:
+          type: string
+          example: Validation error
+
+  responses:
+    InternalServerError:
+      description: Internal Server Error
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+          example:
+            errorCode: 101
+            message: "Se ha producido un error en el servidor"
+    NoContent:
+      description: No Content
+    ProductNotFound:
+      description: Producto no encontrado
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+          example:
+            errorCode: 102
+            message: "Producto no encontrado"
+    UserNotFound:
+      description: Not found
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+          examples:
+            UserNotFound:
+              value:
+                errorCode: 102
+                message: "Usuario no encontrado"
+              description: No se localiza el usuario
+            ProductNotFound:
+              value:
+                errorCode: 102
+                message: "Producto no encontrado"
+              description: No se localiza el producto
+  parameters:
+    ProductId:
+      name: productId
+      in: path
+      description: Código de producto
+      required: true
+      schema:
+        type: number
+        format: int64
+    UserId:
+      name: userId
+      in: path
+      description: Identificador de usuario
+      required: true
+      schema:
+        type: number
+        format: int64
+
+  requestBodies:
+    ProductIn:
+      description: Los nuevos datos del producto
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ProductIn'
+    UserIn:
+      description: Los nuevos datos del usuario
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/UserIn'
